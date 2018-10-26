@@ -30,7 +30,7 @@ Country Vizualization: This interactive map color codes wine production levels a
 
 Wine Variety Dashboard Vizualization: This interactive dashboard will provide numerous vizualizations of data related to wines, driven entirely by the user-selected wine variety.
 
-Expected Software Utilized
+### Expected Software Utilized
 
 •	HTML/ CSS
 
