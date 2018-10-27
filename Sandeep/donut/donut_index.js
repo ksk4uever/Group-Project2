@@ -94,7 +94,7 @@ function donutChart() {
             var polyline = svg.select('.lines')
                 .selectAll('polyline')
                 .data(pie)
-              .enter().append('polyline')
+                .enter().append('polyline')
                 .attr('points', function(d) {
 
                     // see label transform function for explanations of these three lines.
