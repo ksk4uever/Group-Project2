@@ -26,3 +26,4 @@ function drawRegionsMap() {
 });
 google.setOnLoadCallback(drawRegionsMap)
 }
+

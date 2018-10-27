@@ -2,7 +2,7 @@
 // Create a map object
 var myMap = L.map("map", {
   center: [37.09, -95.71],
-  zoom:2
+  zoom:3
 });
 
 // Add a tile layer
@@ -11,7 +11,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/
   "T6YbdDixkOBWH_k9GbS8JQ"
 ).addTo(myMap);
 
-var data = d3.json("../Data/location_data.json", function(data){
+var data = d3.json("../../Sandeep/Data/location_data.json", function(data){
     console.log(data);
     for (var i = 0; i < data.length; i++) {
   var country = data[i];
