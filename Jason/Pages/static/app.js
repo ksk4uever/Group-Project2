@@ -128,18 +128,24 @@ function updateCharts1(sampleData) {
           google.charts.setOnLoadCallback(drawRegionsMap);
           
           function drawRegionsMap() {
-             var arrayLength =  uniq_countries.length;
-             for (var i = 0; i < arrayLength; i++) {
-                var data = google.visualization.arrayToDataTable([
-                ['country', 'totals'],
-                [uniq_countries[i], ct_countries[i]]
+            //  var arrayLength =  uniq_countries.length;
+            //  for (var i = 0; i < arrayLength; i++) {
+            //     var data = google.visualization.arrayToDataTable([
+            //     ['country', 'totals'],
+            //     [uniq_countries[i], ct_countries[i]],
+            //     [uniq_countries[i], ct_countries[i]],
             
-              
-            ],
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Country');
+            data.addColumn('number', 'Total Wineries');
+            for(i = 0; i < uniq_countries.length; i++) {
+              data.addRow([uniq_countries[i], ct_countries[i]]);  
+            
+            // ],
         
             console.log(uniq_countries[i]),
             console.log(ct_countries[i])
-            );
+            };
           
             var options = {};
           
@@ -148,7 +154,7 @@ function updateCharts1(sampleData) {
             chart.draw(data, options);
           }
         }
-    }
+    // }
 
 function getData(variety, callback) {
     // Use a request to grab the json data needed for all charts
