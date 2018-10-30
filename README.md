@@ -1,4 +1,5 @@
-# Group-Project2
+# Project 2: Fine Like Wine
+Group 7 - Sandeep Komuravelli, Jason Garner, Carter Cunningham
 
 ### Topic and Rationale
 
@@ -24,13 +25,15 @@ We decided to use this dataset because it contains recent wine review data (2017
  
 ### Visualizations
 
-Donut Chart Vizualization: This interactive donut chart allows users to visualize country wine production, along with an additional seven wine and demographic data points specific to the each country by hovering over the country's donut slice or name. 
+[Country Level Summary Vizualization (Donut Chart)](https://github.com/ksk4uever/Group-Project2/tree/dev/Sandeep/donut): This interactive donut chart allows users to visualize country wine production, along with an additional seven wine and demographic data points specific to the each country by hovering over the country's donut slice or name. 
 
-Country Vizualization: This interactive map color codes wine production levels at the country level, while allowing the user to hover over a country for additional information.
+[Total Wines Produced by Country Vizualization](https://github.com/ksk4uever/Group-Project2/tree/dev/Jason): This interactive map color codes wine production levels at the country level, while allowing the user to hover over a country for additional information.
 
-Wine Variety Dashboard Vizualization: This interactive dashboard will provide numerous vizualizations of data related to wines, driven entirely by the user-selected wine variety.
+[Winery Locations Vizualization](https://github.com/ksk4uever/Group-Project2/tree/dev/Jason/Pages/Mapping): This interactive map places flags on world map for each winery while allowing the user to hover over a flag for additional winery information.
 
-### Expected Software Utilized
+[Wine Varieties Dashboard](https://github.com/ksk4uever/Group-Project2/blob/dev/Jason/Pages/app.py): This interactive dashboard will provide numerous vizualizations of the wine data from a variety of perspectives (price, rating, country, etc.), driven entirely by the user-selected wine variety.
+
+### Software Utilized
 
 •	HTML/ CSS
 
@@ -40,6 +43,6 @@ Wine Variety Dashboard Vizualization: This interactive dashboard will provide nu
 
 •	Flask
 
-•	Database Tools (SQL Alchemy, SQL/MySQL, MongoDB)
+•	Database Tools (SQL Alchemy, SQL/MySQL)
 
-GitHub Repository: https://github.com/ksk4uever/Group-Project2/
+[GitHub Repository Home] (https://github.com/ksk4uever/Group-Project2/)
