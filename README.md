@@ -45,4 +45,4 @@ We utilized a dataset from [Kaggle.com](https://www.kaggle.com/zynicide/wine-rev
 
 •	Database Tools (SQL Alchemy, SQL/MySQL)
 
-[GitHub Repository Home] (https://github.com/ksk4uever/Group-Project2/)
+[GitHub Repository Home](https://github.com/ksk4uever/Group-Project2/)
