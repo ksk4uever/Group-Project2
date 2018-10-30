@@ -9,13 +9,13 @@ google.charts.setOnLoadCallback(drawRegionsMap);
 function drawRegionsMap() {
 
     $.get("country_wines.csv", function(dataset) {
+
+      console.log(dataset);
         // transform the CSV string into a 2-dimensional array
         var arrayData = $.csv.toArrays(dataset, {onParseValue: $.csv.hooks.castToScalar});
   
         // this new DataTable object holds all the data
         var data = new google.visualization.arrayToDataTable(arrayData);
-
-        console.log(dataset);
 
   var options = {colorAxis: {colors: ["maroon"]}
   };
@@ -26,4 +26,3 @@ function drawRegionsMap() {
 });
 google.setOnLoadCallback(drawRegionsMap)
 }
-
