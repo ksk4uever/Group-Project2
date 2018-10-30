@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Wine Reference Guide</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="jquery.csv.min.js"></script>
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <!-- Our own CSS stylesheet -->
+  <link rel="stylesheet" href="style.css" media="screen">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Wines Across The World</h1>
+        <p>A visual representation of wines produced per country</p>
+      </div>
+    </div>
+  </div>
+
+    <div class="topnav">
+      <a href="/index.html">Home</a>
+      <a href="../About/about_index.html">About</a>
+      <a href="../donut/donut_index.html">Country Level Summary</a>
+      <a class="active" href="../Countries/index.html">Total Wines Produced by Country (Map)</a>
+      <a href="../Mapping/mapping.html">Winery locations (Map)</a>
+      <a href="http://127.0.0.1:5000/">Wine Varieties Dashboard</a>  
+
+      <div class = "container">
+        <div class = "row">
+            <div class="col-md-12" align="center">
+  
+      <div id="regions_div" style="width: 1200px; height: 500px;"></div>
+
+    </div>
+  </div>
+</div>    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- <script type="text/javascript" src="logic-jg.js"></script> -->
+  <script type="text/javascript" src="logic-attempt.js"></script>
+</body>
+
+</html>
