@@ -1,0 +1,165 @@
+.jumbotron {
+    text-align: center;
+    background-color: rgb(142, 124, 155);
+    opacity: 0.7;
+    min-height: 75px;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #008080;
+    color: white;
+}
+
+.navbar-custom {
+    background-color: #fff;
+  }
+  
+  #logo {
+    /* Box-model */
+    height: 60px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+  
+    /* Positioning */
+    margin-left: 70px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+  
+    /* Typography */
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  
+    /* Visual */
+    background: #f3e6ff;
+  }
+
+  
+  Logo hover state
+  #logo:hover {
+    /* Visual  */
+    opacity: 0.7;
+  }
+
+
+  .navbar-right-custom {
+    /* Box-model */
+    padding-top: 6px;
+    padding-right: 20px;
+  
+    /* Typography */
+    font-family: Arial;
+    font-weight: lighter;
+  }
+  
+  /* Nav element hover state */
+  .navbar-default .navbar-nav > li > a:hover {
+    color: #4aaaa5;
+  }
+  
+  /* Media query for nav */
+  @media only screen and (max-width: 767px) {
+    .navbar-header {
+      background-color: #4aaaa5;
+    }
+  
+    #logo {
+      width: 100%;
+  
+      /* Box-model */
+      height: 60px;
+      padding-top: 20px;
+      padding-bottom: 5px;
+  
+      /* Positioning */
+      margin-left: 0;
+      font-family: Georgia, Times, "Times New Roman", serif;
+  
+      /* Typography */
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+  
+      /* Visual */
+      background: #4aaaa5;
+    }
+  }
+  
+  /* Start country_index.css paste */
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+}
+
+/* Add shadow effect to chart. If you don't like it, get rid of it. */
+svg {
+    -webkit-filter: drop-shadow( 0px 3px 3px rgba(0,0,0,.3) );
+    filter: drop-shadow( 0px 3px 3px rgba(0,0,0,.25) );
+}
+
+/*Styling for the lines connecting the labels to the slices*/
+polyline{
+    opacity: .3;
+    stroke: black;
+    stroke-width: 2px;
+    fill: none;
+}
+
+/* Make the percentage on the text labels bold*/
+.labelName tspan {
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* In biology we generally italicise species names. */
+.labelName {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: rgb(142, 124, 155);
+    opacity: 0.7;
+    min-height: 75px;
+}
+
+
+/* Begin Sandeep's pasted CSS */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#map,
+body,
+html {
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+}
