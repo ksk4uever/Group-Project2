@@ -29,7 +29,7 @@ app.config['JSON_AS_ASCII'] = False  # default
 conn = sqlite3.connect("Wine.DB")
 
 # Write to DB
-wine_data = pd.read_csv("Data/clean_winemag-data.csv")
+wine_data = pd.read_csv("Data/clean_winemag-data2.csv")
 wine_data.to_sql("wine", conn, if_exists="replace")
 
 # This will read
@@ -92,7 +92,8 @@ def price_points(variety):
     prices = list(wine_df[wine_df['variety']==variety]['price'])
     points = list(wine_df[wine_df['variety']==variety]['points'])
     countries = list(wine_df[wine_df['variety']==variety]['country'])
-    return jsonify({"points": list(map(int,points)), "prices": list(map(int,prices)), 'countries':countries})
+    titles = list(wine_df[wine_df['variety']==variety]['title'])
+    return jsonify({"titles": titles, "points": list(map(int,points)), "prices": list(map(int,prices)), 'countries':countries})
 
     
 @app.route('/metadata/<variety>')

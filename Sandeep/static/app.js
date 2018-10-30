@@ -17,6 +17,7 @@ function buildCharts(sampleData) {
     var points = sampleData['points'];
     var prices = sampleData['prices'];
     var countries = sampleData['countries'];
+    var titles = sampleData['titles'];
     var uniq_countries = [...new Set(countries)];
     var ct_countries = []; // count the occurence of each country
     uniq_countries.forEach(function(x){return ct_countries.push(countries.filter(function(y){return y==x}).length)});
@@ -44,6 +45,7 @@ function buildCharts(sampleData) {
         x: countries,
         y: prices,
         text: points,
+        text: titles,
         mode: 'markers',
         marker: {
             size: points.map(function(x){return (x-78)*2}),
@@ -74,6 +76,7 @@ function updateCharts(sampleData) {
     var points = sampleData['points'];
     var prices = sampleData['prices'];
     var countries = sampleData['countries'];
+    var titles = sampleData['titles'];
     var uniq_countries = [...new Set(countries)];
     console.log(uniq_countries);
     var ct_countries = [];
@@ -91,6 +94,7 @@ function updateCharts(sampleData) {
     Plotly.restyle(BUBBLE, 'x', [countries]);
     Plotly.restyle(BUBBLE, 'y', [prices]);
     Plotly.restyle(BUBBLE, 'text', [points]);
+    Plotly.restyle(BUBBLE, 'text', [titles]);
     Plotly.restyle(BUBBLE, 'marker.size', [points.map(function(x){return (x-78)*2})]);
     Plotly.restyle(BUBBLE, 'marker.color', [color_int]);
     // Update the Pie Chart with the new data
@@ -105,6 +109,52 @@ function updateCharts(sampleData) {
     };
     Plotly.restyle(PIE, pieUpdate);
 }
+
+
+function updateCharts1(sampleData) {
+    // Loop through sample data and find the OTU Taxonomic Name
+    var points = sampleData['points'];
+    var prices = sampleData['prices'];
+    var countries = sampleData['countries'];
+    var uniq_countries = [...new Set(countries)];
+    console.log(uniq_countries);
+    var ct_countries = [];
+    uniq_countries.forEach(function(x){return ct_countries.push(countries.filter(function(y){return y==x}).length)});
+    console.log(ct_countries);
+    google.charts.load('current', {
+            'packages':['geochart'],
+            'mapsApiKey': 'AIzaSyA3NbxDzYxAAUQZfkUHlDn_0ID52d0tJXU'
+          });
+          google.charts.setOnLoadCallback(drawRegionsMap);
+          
+          function drawRegionsMap() {
+            //  var arrayLength =  uniq_countries.length;
+            //  for (var i = 0; i < arrayLength; i++) {
+            //     var data = google.visualization.arrayToDataTable([
+            //     ['country', 'totals'],
+            //     [uniq_countries[i], ct_countries[i]],
+            //     [uniq_countries[i], ct_countries[i]],
+            
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Country');
+            data.addColumn('number', 'Total Wineries');
+            for(i = 0; i < uniq_countries.length; i++) {
+              data.addRow([uniq_countries[i], ct_countries[i]]);  
+            
+            // ],
+        
+            console.log(uniq_countries[i]),
+            console.log(ct_countries[i])
+            };
+          
+            var options = {};
+          
+            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+          
+            chart.draw(data, options);
+          }
+        }
+    // }
 
 function getData(variety, callback) {
     // Use a request to grab the json data needed for all charts
@@ -128,8 +178,9 @@ function getOptions() {
         for (var i = 0; i < sampleNames.length;  i++) {
             var currentOption = document.createElement('option');
             currentOption.text = sampleNames[i];
-            currentOption.value = sampleNames[i]
+            currentOption.value = sampleNames[i];
             selDataset.appendChild(currentOption);
+            
         }
         getData(sampleNames[0],buildCharts);
     })
@@ -137,6 +188,7 @@ function getOptions() {
 function optionChanged(newSample) {
     // Fetch new data each time a new sample is selected
     getData(newSample, updateCharts);
+    getData(newSample, updateCharts1);
 }
 function init() {
     getOptions();
